@@ -25,7 +25,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [CSS] - Front end development language.
 * [HTML] - Front end development language.
 
-## Expresiones de Gratitud 🎁
+## Final Messages 🎁
 
 * Thanks for watching. 
 * Happy code 🤓.
