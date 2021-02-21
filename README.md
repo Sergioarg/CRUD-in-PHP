@@ -18,7 +18,7 @@ _For this you must make copy the folder and paste it in the xampp folder_
 
 ## Built with 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_These were some tools used_
 
 * [PHP] - The backend language in which it was created.
 * [JavaScript] - Backend and frontend language part.
