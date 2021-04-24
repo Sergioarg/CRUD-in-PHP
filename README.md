@@ -27,7 +27,7 @@ _These were some tools used_
 
 ## Final Messages 🎁
 
-* Thanks for watching. 
+* Thanks for watching.
 * Happy code 🤓.
 
 ---

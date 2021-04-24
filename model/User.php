@@ -7,8 +7,9 @@
 	class User
 	{
 		private $pdo;
-			
-		// Sobrecarga al constructor para conectar a BD.
+		/**
+		 * __construct - Sobrecarga al constructor para conectar a BD.
+		 */
 		function __construct()
 		{
 			try {
@@ -17,8 +18,9 @@
 				die($e->getMessage());
 			}
 		}
-
-		// Lista todos los usuarios que se encuentran en la BD.
+		/**
+		 * all - Lista todos los usuarios que se encuentran en la BD.
+		**/
 		public function all()
 		{
 			try {
@@ -29,9 +31,11 @@
 				die($e->getMessage());
 			}
 		}
-		
-		// Realizo este query para verificar si se encuentra una cedula igual en la BD.
-		// Que luego utilizo en el controlador
+
+		/**
+		 * validarCedula - Realizo este query para verificar si se encuentra
+		 * una cedula igual en la BD.
+		**/
 		public function validarCedula($cedula)
         {
             try {
@@ -39,17 +43,16 @@
                 $query->execute();
                 $query->fetchAll(PDO::FETCH_ASSOC);
 
-                if ($query->rowCount()) {
-                    return true; 
-                   }
-               else{ 
+                if ($query->rowCount())
+                    return true;
+               else
                    return false;
-               }
            } catch (Exception $e) {}
 		}
-		
-		// Realizo este query para verificar si se encuentra un correo igual en la BD.
-		// Que luego utilizo en el controlador
+		/**
+		 * validarCorreo - Realizo este query para verificar si se encuentra
+		 * un correo igual en la BD
+		 **/
 		public function validarCorreo($correo)
         {
             try {
@@ -57,16 +60,16 @@
                 $query->execute();
                 $query->fetchAll(PDO::FETCH_ASSOC);
 
-                if ($query->rowCount()) {
-                    return true; 
-                   }
-               else{ 
+                if ($query->rowCount())
+                    return true;
+               else
                    return false;
-               }
            } catch (Exception $e) {}
 		}
-	
-		// Por medio realizo a inserción de nuevos usuarios en la BD.
+
+		/**
+		 * newUser - Por medio realizo a inserción de nuevos usuarios en la BD.
+		 */
 		public function newUser($data)
 		{
 			try {
@@ -83,16 +86,16 @@
 								$data= $_POST['telefono'],
 								$data= $_POST['f_registro'],
 								$data= $_POST['f_modificacion']
-
 							)
 						);
 			} catch(Exception $e) {
 				die($e->getMessage());
 			}
 		}
-
-	
-		// Por medio de este query realizo el update para los datos del usuario excepto en la cédula.
+		/**
+		 * editUser - Por medio de este query realizo el update para los datos
+		 * del usuario excepto en la cédula.
+		**/
 		public function editUser($data)
         {
 			try {
@@ -112,19 +115,19 @@
                 die($e->getMessage());
             }
         }
-	
-		// Por medio de este query realizo el delete de un usario por su repectivo id
+		/**
+		 * removeByid - Por medio de este query realizo el delete de un
+		 * usario por su respectivo id.
+		**/
 		public function removeByid($id)
-		{ 
+		{
 			try {
-				$sql = $this->pdo->prepare("DELETE FROM usuarios WHERE id=? ");				
+				$sql = $this->pdo->prepare("DELETE FROM usuarios WHERE id=? ");
 				$sql->execute(array($id));
-					
+
 			} catch(Exception $e) {
 				die($e->getMessage());
 			}
 		}
-			
-
-}
+	}
 ?>

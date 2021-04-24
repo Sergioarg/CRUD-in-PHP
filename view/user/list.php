@@ -16,7 +16,7 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th> 
+                            <th>ID</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th>Cédula</th>
@@ -43,12 +43,11 @@
                                     <a href="#editModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar" id="v<?php echo $inc; ?>"  onclick="editar(this.id)" >&#xE254;</i></a>
                                     <a href="#delete" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"  id="<?php echo $user->ID ?>" onclick="obtenerId(this.id)" title="Eliminar">&#xE872;</i></a>
                                 </td>
-                            </tr>						
+                            </tr>
                         <?php $inc++; endforeach; ?>
                     </tbody>
                 </table>
             </div>
-        </div>        
+        </div>
     </div>
 </body>
-
